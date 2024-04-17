@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <title>Результат распознавания</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<h1>Результат распознавания</h1>
+<div id="hocrResult" th:if="${hocrResponse}">
+    <h2>HOCR разметка</h2>
+    <pre th:utext="${hocrResponse}"></pre>
+</div>
+
+<a href="/">Вернуться</a>
+</body>
+</html>

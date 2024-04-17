@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <title>Загрузка и распознавание изображения</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<h1>Загрузите изображение или документ</h1>
+<div id="messages">
+    <p th:if="${error}" class="error-message" th:text="${error}" th:style="${error} ? 'display: block;' : 'display: none;'"></p>
+</div>
+<p>(JPG, PNG, PDF)</p>
+<form id="uploadForm" method="POST" enctype="multipart/form-data" th:action="@{/recognize}" th:method="post">
+    <input type="file" name="file" id="fileInput" />
+    <input type="submit" value="Распознать" />
+</form>
+
+<a href="/">Вернуться</a>
+</body>
+</html>
